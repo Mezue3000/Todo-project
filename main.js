@@ -1,5 +1,5 @@
 // create an empty array
-const myTodo = ['cook food', 'wash car'];
+const myTodo = [];
 renderList()
 
 // create a function for add button
@@ -16,10 +16,17 @@ function addTodo () {
     todoHtml = ''
     for (i = 0; i < myTodo.length; i++) {
         const todoList = myTodo[i]
-        const html = `<p>${todoList}</p>`
+        // Generating html
+        const html =`
+            <p>
+             ${todoList} <button onclick='
+             myTodo.splice(${i}, 1)
+             renderList()
+             '>Delete</button>
+            </p>`
         todoHtml += html  
     }
-    
+    // Render on the web page
    document.querySelector('.todo-app').innerHTML = todoHtml
 
    }
