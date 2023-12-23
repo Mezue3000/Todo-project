@@ -18,12 +18,12 @@ function addTodo () {
         const todoList = myTodo[i]
         // Generating html
         const html =`
-            <p>
-             ${todoList} <button onclick='
-             myTodo.splice(${i}, 1)
-             renderList()
-             '>Delete</button>
-            </p>`
+            <div>${todoList}</div>
+            <div><button class = 'red' onclick='
+            myTodo.splice(${i}, 1)
+            renderList()
+            '>Delete</button></div>
+            `
         todoHtml += html  
     }
     // Render on the web page
